@@ -1,6 +1,14 @@
-# `ZTRACE`
+<h1> Ztrace </h1>
 
-## Introduction
+- [Introduction](#introduction)
+- [Installation](#installation)
+  - [ZI](#zi)
+  - [Antigen](#antigen)
+  - [Oh-My-Zsh](#oh-my-zsh)
+  - [Zgenom](#zgenom)
+- [More information](#more-information)
+
+# Introduction
 
 `Ztrace` plugin allows to catch output of commands in background.
 By issuing:
@@ -15,28 +23,28 @@ Video: https://asciinema.org/a/45530
 
 [![asciicast](https://asciinema.org/a/45530.png)](https://asciinema.org/a/45530)
 
-## Installation
+# Installation
 
-### [Zinit](https://github.com/z-shell/zinit)
+## [ZI](https://github.com/z-shell/zi)
 
-Add `zinit load z-shell/ztrace` to your `.zshrc` file. zinit will handle
+Add `zi load z-shell/ztrace` to your `.zshrc` file. zi will handle
 cloning the plugin for you automatically the next time you start zsh.
 
-### [Antigen](https://github.com/zsh-users/antigen)
+## [Antigen](https://github.com/zsh-users/antigen)
 
 Adding `antigen bundle z-shell/ztrace` to your .zshrc file. Antigen will handle cloning the plugin for you automatically the next time you start zsh. You can also add the plugin to a running zsh with `antigen bundle z-shell/ztrace` for testing before adding it to your `.zshrc`.
 
-### [Oh-My-Zsh](http://ohmyz.sh/)
+## [Oh-My-Zsh](http://ohmyz.sh/)
 
 1. `cd ~/.oh-my-zsh/custom/plugins`
 2. `git clone git@github.com:z-shell/ztrace.git`
 3. Add zsnapshot to your plugin list
 
-### [Zgenom](https://github.com/jandamm/zgenom)
+## [Zgenom](https://github.com/jandamm/zgenom)
 
 Add `zgenom load z-shell/ztrace` to your .zshrc file in the same function you're doing your other `zgen load` calls in.
 
-## More information
+# More information
 
 Below are keyboard shortcuts used by `ztrace` command:
 
