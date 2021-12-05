@@ -14,40 +14,40 @@ integer -g ZTRACE_IN_PROGRESS=0
 ##
 
 ztstart() {
-    integer num="$1"
+  integer num="$1"
 
-    if [ "$ZTRACE_PATH" = "/tmp/" ]; then
-        print "Error occured, ZTRACE_PATH is just '/tmp'"
-        return 1
-    fi
+  if [ "$ZTRACE_PATH" = "/tmp/" ]; then
+    print "Error occured, ZTRACE_PATH is just '/tmp'"
+    return 1
+  fi
 
-    # Create destination path for the process
-    command mkdir -p "$ZTRACE_PATH"
+  # Create destination path for the process
+  command mkdir -p "$ZTRACE_PATH"
 
-    ZTRACE_COUNT=num
-    ZTRACE_IN_PROGRESS=1
-    local fname=$(date +%Y.%m.%d_%H:%M:%S)".ztrace"
-    ZTRACE_FNAME="$fname"
-    -zt-pinfo "Ztrace started"
+  ZTRACE_COUNT=num
+  ZTRACE_IN_PROGRESS=1
+  local fname=$(date +%Y.%m.%d_%H:%M:%S)".ztrace"
+  ZTRACE_FNAME="$fname"
+  -zt-pinfo "Ztrace started"
 
-    # Save std out
-    exec {ZTRACE_FD}>&1
-    exec > >(tee -a "$ZTRACE_PATH/$fname")
+  # Save std out
+  exec {ZTRACE_FD}>&1
+  exec > >(tee -a "$ZTRACE_PATH/$fname")
 }
 
 ztstop() {
-    ZTRACE_IN_PROGRESS=0
-    exec >&$ZTRACE_FD && exec {ZTRACE_FD}>&-
-    -zt-pinfo "Ztrace stopped"
-    ZTRACE_FNAME=""
+  ZTRACE_IN_PROGRESS=0
+  exec >&$ZTRACE_FD && exec {ZTRACE_FD}>&-
+  -zt-pinfo "Ztrace stopped"
+  ZTRACE_FNAME=""
 }
 
 #
 # Shows how many more commands will be catched
 #
 ztstatus() {
-    (( ZTRACE_COUNT ++ ))
-    print "Ztrace will catch $ZTRACE_COUNT following commands"
+  ((ZTRACE_COUNT++))
+  print "Ztrace will catch $ZTRACE_COUNT following commands"
 }
 
 ## }}}
@@ -61,12 +61,12 @@ ztstatus() {
 # and stops ztrace when it's time
 #
 -zt-precmd() {
-    (( ZTRACE_COUNT-- ))
-    if [[ "$ZTRACE_COUNT" -lt 0 && "$ZTRACE_IN_PROGRESS" = "1" ]]; then
-        ztstop
-    elif [ "$ZTRACE_IN_PROGRESS" = "1" ]; then
-        print "\\n-------------" >> "$ZTRACE_PATH/$ZTRACE_FNAME"
-    fi
+  ((ZTRACE_COUNT--))
+  if [[ "$ZTRACE_COUNT" -lt 0 && "$ZTRACE_IN_PROGRESS" = "1" ]]; then
+    ztstop
+  elif [ "$ZTRACE_IN_PROGRESS" = "1" ]; then
+    print "\\n-------------" >>"$ZTRACE_PATH/$ZTRACE_FNAME"
+  fi
 }
 
 ## }}}
@@ -88,22 +88,22 @@ ztstatus() {
 # Startup
 #
 -zt-init() {
-    setopt localoptions nullglob
+  setopt localoptions nullglob
 
-    # Cleary any possible left overs from previous sessions
-    typeset -a traces
-    traces=( "$ZTRACE_PATH"/*.ztrace )
-    if [[ "${#traces}" -gt 0 ]]; then
-        command rm -f "${traces[@]}"
-    fi
+  # Cleary any possible left overs from previous sessions
+  typeset -a traces
+  traces=("$ZTRACE_PATH"/*.ztrace)
+  if [[ "${#traces}" -gt 0 ]]; then
+    command rm -f "${traces[@]}"
+  fi
 
-    if [[ "$+fg_bold" -eq 0 ]]; then
-        autoload colors
-        colors
-    fi
+  if [[ "$+fg_bold" -eq 0 ]]; then
+    autoload colors
+    colors
+  fi
 
-    autoload add-zsh-hook
-    add-zsh-hook precmd -zt-precmd
+  autoload add-zsh-hook
+  add-zsh-hook precmd -zt-precmd
 }
 
 -zt-init

@@ -72,7 +72,7 @@ _hlist_print_with_ansi() {
                     to_chop_off_from_chunk=0+(text_len-text_offset)-max_text_len
                     Xout="${Xout[1,-to_chop_off_from_chunk-1]}"
                 fi
-                
+
                 [ -n "$Xout" ] && zcurses string "$win" "$Xout"
             fi
         fi

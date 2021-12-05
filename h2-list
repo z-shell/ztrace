@@ -51,9 +51,9 @@ _hlist_cursor_visibility() {
         [ "$2" = "0" ] && tput civis
     elif [ "$_hlist_has_terminfo" = "1" ]; then
         [ "$2" = "1" ] && { [ -n $terminfo[cvvis] ] && echo -n $terminfo[cvvis];
-                           [ -n $terminfo[cnorm] ] && echo -n $terminfo[cnorm] }
+        [ -n $terminfo[cnorm] ] && echo -n $terminfo[cnorm] }
         [ "$2" = "0" ] && [ -n $terminfo[civis] ] && echo -n $terminfo[civis]
-    fi 
+    fi
 }
 
 _hlist_compute_user_vars_difference() {
@@ -416,7 +416,7 @@ while (( 1 )); do
         # status_msg_strlen is set in _hlist_status_msg()
         zcurses move "$wname_status" 1 $(( status_msg_strlen + 2 ))
         [ "$HLIST_IS_SEARCH_MODE" -ne 1 ] && _hlist_cursor_visibility "status" "0" || _hlist_cursor_visibility "status" "1"
-        zcurses refresh "$wname_status" 
+        zcurses refresh "$wname_status"
     }
 
     # Draw only?
