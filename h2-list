@@ -1,3 +1,6 @@
+# -*- mode: zsh; sh-indentation: 2; indent-tabs-mode: nil; sh-basic-offset: 2; -*-
+# vim: ft=zsh sw=2 ts=2 et
+#
 # $1 - main window name
 # $2, $3 - width and height of the window
 # $4 - optional status window name
@@ -499,5 +502,3 @@ while (( 1 )); do
         break
     fi
 done
-
-# vim: set filetype=zsh:
