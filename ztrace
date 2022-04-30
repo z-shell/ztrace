@@ -1,4 +1,7 @@
 # Uses h2-list
+# -*- mode: zsh; sh-indentation: 2; indent-tabs-mode: nil; sh-basic-offset: 2; -*-
+# vim: ft=zsh sw=2 ts=2 et
+#
 
 emulate -LR zsh
 
@@ -598,4 +601,3 @@ done
 
 # Main loop
 done
-# vim: set filetype=zsh:
