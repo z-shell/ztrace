@@ -1,5 +1,10 @@
 emulate -L zsh
 
+#
+# -*- mode: zsh; sh-indentation: 2; indent-tabs-mode: nil; sh-basic-offset: 2; -*-
+# vim: ft=zsh sw=2 ts=2 et
+#
+
 zmodload zsh/curses
 
 test_fd0() {
@@ -36,5 +41,3 @@ fi
 # Restore FD state
 ((restore == 1)) && exec <&-
 ((restore == 2)) && exec <&$FD && exec {FD}<&-
-
-# vim: set filetype=zsh:
