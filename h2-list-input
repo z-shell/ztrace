@@ -2,6 +2,10 @@
 # and add 'autoload h2-list-input` to .zshrc
 #
 # This is an internal function not for direct use
+#
+# -*- mode: zsh; sh-indentation: 2; indent-tabs-mode: nil; sh-basic-offset: 2; -*-
+# vim: ft=zsh sw=2 ts=2 et
+#
 
 emulate -L zsh
 
@@ -285,5 +289,3 @@ reply[5]="$hscroll"
 reply[6]="$search"
 reply[7]="$buffer"
 reply[8]="$uniq_mode"
-
-# vim: set filetype=zsh:
