@@ -2,6 +2,10 @@
 # and add 'autoload h2-list-draw` to .zshrc
 #
 # This is an internal function not for direct use
+#
+# -*- mode: zsh; sh-indentation: 2; indent-tabs-mode: nil; sh-basic-offset: 2; -*-
+# vim: ft=zsh sw=2 ts=2 et
+#
 
 emulate -L zsh
 
@@ -142,4 +146,3 @@ if [ "$end_idx" -lt "$max_idx" ]; then
 fi
 
 zcurses attr "$win" white/black
-# vim: set filetype=zsh:
