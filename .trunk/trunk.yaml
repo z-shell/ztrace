@@ -28,7 +28,7 @@ lint:
   ignore:
     - linters: [ALL]
       paths:
-        - '.*'
+        - 'ztrace.plugin.zsh'
     - linters: [actionlint]
       paths:
         - .github/workflows/sync-labels.yml
