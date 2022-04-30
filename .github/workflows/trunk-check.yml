@@ -1,10 +1,10 @@
 ---
-name: '♻️ Trunk Check'
+name: "♻️ Trunk Check"
 on:
   workflow_call:
   workflow_dispatch:
   push:
-    branches: ['main']
+    branches: ["main"]
   pull_request:
     types: [opened, synchronize]
 #  schedule:
@@ -12,5 +12,5 @@ on:
 
 jobs:
   labels:
-    name: '♻️ Trunk Check'
+    name: "♻️ Trunk Check"
     uses: z-shell/.github/.github/workflows/trunk-check.yml@main
