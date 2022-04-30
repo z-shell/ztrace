@@ -1,3 +1,6 @@
+# -*- mode: zsh; sh-indentation: 2; indent-tabs-mode: nil; sh-basic-offset: 2; -*-
+# vim: ft=zsh sw=2 ts=2 et
+#
 # Saved stdout descriptor
 typeset -g ZTRACE_FD
 # Path to directory where traces are saved
@@ -45,6 +48,7 @@ ztstop() {
 #
 # Shows how many more commands will be catched
 #
+
 ztstatus() {
   ((ZTRACE_COUNT++))
   print "Ztrace will catch $ZTRACE_COUNT following commands"
@@ -60,6 +64,7 @@ ztstatus() {
 # Hook that counts number of commands executed
 # and stops ztrace when it's time
 #
+
 -zt-precmd() {
   ((ZTRACE_COUNT--))
   if [[ "$ZTRACE_COUNT" -lt 0 && "$ZTRACE_IN_PROGRESS" = "1" ]]; then
@@ -87,6 +92,7 @@ ztstatus() {
 #
 # Startup
 #
+
 -zt-init() {
   setopt localoptions nullglob
 
