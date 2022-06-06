@@ -31,10 +31,7 @@
       alt="Visual Studio Code"
     />
   </a><br />
-  <p><a title="asciicast" target="_self" href="https://asciinema.org/a/45530">
-    <img align="center" src="https://asciinema.org/a/45530.png" />
-    </a>
-  </p>
+  <p><a href="https://asciinema.org/a/45530" target="_blank"><img src="https://asciinema.org/a/45530.svg" /></a></p>
 </td></tr><tr><td align="left"><br />
 
 `Ztrace` plugin allows to catch output of commands in background.
