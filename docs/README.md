@@ -3,13 +3,13 @@
  <tr align="justify" margin-left="auto" margin-right="auto"><td align="center">
   <h1>
   <a href="https://github.com/z-shell/zi">
-    <img src="https://github.com/z-shell/zi/raw/main/docs/images/logo.svg" alt="Logo" width="80" height="80" />
+    <img src="https://github.com/z-shell/zi/raw/main/docs/images/logo.png" alt="Logo" width="80" height="80" />
   </a>
-  ❮ ZI ❯ Plugin - Ztrace
+  ❮ Zi ❯ Plugin - Ztrace
   </h1>
 <h3>
   <a href="https://github.com/orgs/z-shell/discussions/">《❔》Ask a Question </a>
-  <a href="https://z.digitalclouds.dev/search/">《💡》Search Wiki </a>
+  <a href="https://wiki.zshell.dev/search/">《💡》Search Wiki </a>
   <a href="https://github.com/z-shell/community/issues/new?assignees=&labels=%F0%9F%91%A5+member&template=membership.yml&title=team%3A+">《💜》Join </a>
   <a href="https://digitalclouds.crowdin.com/z-shell/">《🌐》Localize </a>
 </h3>
